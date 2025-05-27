@@ -30,7 +30,7 @@ def get_current_temperature(latitude: str, longitude: str) -> dict:
     response = httpx.get(url)
     result = json.loads(response.text)
 
-    return result
+    return {"temperature": result["temperature"]["degrees"], "unit": result["temperature"]["unit"]}
 
 def get_location_coordinates(location: str) -> dict:
     url = f"https://maps.googleapis.com/maps/api/geocode/json?address={location}&key={API_KEY}"
@@ -48,5 +48,38 @@ if __name__ == "__main__":
     print(temp)
 
     """
-    {'currentTime': '2025-05-27T15:39:41.098141936Z', 'timeZone': {'id': 'Europe/Amsterdam'}, 'isDaytime': True, 'weatherCondition': {'iconBaseUri': 'https://maps.gstatic.com/weather/v1/drizzle', 'description': {'text': 'Light rain', 'languageCode': 'en'}, 'type': 'LIGHT_RAIN'}, 'temperature': {'degrees': 13.4, 'unit': 'CELSIUS'}, 'feelsLikeTemperature': {'degrees': 12.3, 'unit': 'CELSIUS'}, 'dewPoint': {'degrees': 11.1, 'unit': 'CELSIUS'}, 'heatIndex': {'degrees': 13.4, 'unit': 'CELSIUS'}, 'windChill': {'degrees': 12.3, 'unit': 'CELSIUS'}, 'relativeHumidity': 87, 'uvIndex': 1, 'precipitation': {'probability': {'percent': 92, 'type': 'RAIN'}, 'snowQpf': {'quantity': 0, 'unit': 'MILLIMETERS'}, 'qpf': {'quantity': 0.0203, 'unit': 'MILLIMETERS'}}, 'thunderstormProbability': 10, 'airPressure': {'meanSeaLevelMillibars': 1011.83}, 'wind': {'direction': {'degrees': 220, 'cardinal': 'SOUTHWEST'}, 'speed': {'value': 14, 'unit': 'KILOMETERS_PER_HOUR'}, 'gust': {'value': 27, 'unit': 'KILOMETERS_PER_HOUR'}}, 'visibility': {'distance': 13, 'unit': 'KILOMETERS'}, 'cloudCover': 100, 'currentConditionsHistory': {'temperatureChange': {'degrees': -4.2, 'unit': 'CELSIUS'}, 'maxTemperature': {'degrees': 17.7, 'unit': 'CELSIUS'}, 'minTemperature': {'degrees': 12.8, 'unit': 'CELSIUS'}, 'snowQpf': {'quantity': 0, 'unit': 'MILLIMETERS'}, 'qpf': {'quantity': 3.1065, 'unit': 'MILLIMETERS'}}}
+    {
+        'currentTime': '2025-05-27T15:39:41.098141936Z', 
+        'timeZone': {'id': 'Europe/Amsterdam'}, 
+        'isDaytime': True, 
+        'weatherCondition': {
+            'iconBaseUri': 'https://maps.gstatic.com/weather/v1/drizzle', 
+            'description': {'text': 'Light rain', 'languageCode': 'en'}, 
+            'type': 'LIGHT_RAIN'
+        }, 
+        'temperature': {'degrees': 13.4, 'unit': 'CELSIUS'}, 
+        'feelsLikeTemperature': {'degrees': 12.3, 'unit': 'CELSIUS'}, 
+        'dewPoint': {'degrees': 11.1, 'unit': 'CELSIUS'}, 
+        'heatIndex': {'degrees': 13.4, 'unit': 'CELSIUS'}, 
+        'windChill': {'degrees': 12.3, 'unit': 'CELSIUS'}, 
+        'relativeHumidity': 87, 
+        'uvIndex': 1, 
+        'precipitation': {
+            'probability': {'percent': 92, 'type': 'RAIN'}, 
+            'snowQpf': {'quantity': 0, 'unit': 'MILLIMETERS'}, 
+            'qpf': {'quantity': 0.0203, 'unit': 'MILLIMETERS'}
+        }, 
+        'thunderstormProbability': 10, 
+        'airPressure': {'meanSeaLevelMillibars': 1011.83}, 
+        'wind': {'direction': {'degrees': 220, 'cardinal': 'SOUTHWEST'}, 
+        'speed': {'value': 14, 'unit': 'KILOMETERS_PER_HOUR'}, 
+        'gust': {'value': 27, 'unit': 'KILOMETERS_PER_HOUR'}}, 
+        'visibility': {'distance': 13, 'unit': 'KILOMETERS'}, 
+        'cloudCover': 100, 
+        'currentConditionsHistory': {'temperatureChange': {'degrees': -4.2, 'unit': 'CELSIUS'}, 
+        'maxTemperature': {'degrees': 17.7, 'unit': 'CELSIUS'}, 
+        'minTemperature': {'degrees': 12.8, 'unit': 'CELSIUS'}, 
+        'snowQpf': {'quantity': 0, 'unit': 'MILLIMETERS'}, 
+        'qpf': {'quantity': 3.1065, 'unit': 'MILLIMETERS'}}
+    }
     """
