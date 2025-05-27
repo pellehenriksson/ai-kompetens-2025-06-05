@@ -7,30 +7,37 @@ import pandas as pd
 import httpx
 
 from dotenv import load_dotenv
+
 load_dotenv()
 
-API_KEY = os.getenv("GOOGLE_API_KEY") # load the api key from another file (.env)
+API_KEY = os.getenv("GOOGLE_API_KEY")  # load the api key from another file (.env)
+
 
 def clean_name(s: str) -> str:
     return re.sub(r"\s*\([^)]*\)", "", s)
 
-def create_winners_file() -> None:
 
+def create_winners_file() -> None:
     df = pd.read_html("https://sv.wikipedia.org/wiki/The_Masters_Tournament")[1]
     df.columns = ["year", "winner", "country", "score", "margin"]
 
     df["winner"] = df["winner"].apply(clean_name)
 
-    df.to_csv("data/masters-winners.csv", columns=["year", "winner", "country"], index=False)
+    df.to_csv(
+        "data/masters-winners.csv", columns=["year", "winner", "country"], index=False
+    )
 
 
 def get_current_temperature(latitude: str, longitude: str) -> dict:
-
     url = f"https://weather.googleapis.com/v1/currentConditions:lookup?key={API_KEY}&location.latitude={latitude}&location.longitude={longitude}"
     response = httpx.get(url)
     result = json.loads(response.text)
 
-    return {"temperature": result["temperature"]["degrees"], "unit": result["temperature"]["unit"]}
+    return {
+        "temperature": result["temperature"]["degrees"],
+        "unit": result["temperature"]["unit"],
+    }
+
 
 def get_location_coordinates(location: str) -> dict:
     url = f"https://maps.googleapis.com/maps/api/geocode/json?address={location}&key={API_KEY}"
@@ -40,6 +47,7 @@ def get_location_coordinates(location: str) -> dict:
     location = result["results"][0]["geometry"]["location"]
 
     return {"latitude": location["lat"], "longitude": location["lng"]}
+
 
 if __name__ == "__main__":
     location = get_location_coordinates("amsterdam")
