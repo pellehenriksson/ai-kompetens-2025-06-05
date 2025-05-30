@@ -1,0 +1,84 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.9 Chrome/134.0.6998.205 Electron/35.4.0 Safari/537.36" version="27.0.9">
+  <diagram name="Page-1" id="Brh9M0G5z-_049frxntX">
+    <mxGraphModel dx="576" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7bV-YWdE4SNP33KC-X1z-2" value="Client" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="920" y="40" width="100" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="7bV-YWdE4SNP33KC-X1z-3" value="LLM API" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="1240" y="40" width="100" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="7bV-YWdE4SNP33KC-X1z-4" value="send prompt&amp;nbsp;&lt;br&gt;with information about available tools" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="969.5" y="120" as="sourcePoint" />
+            <mxPoint x="1289.5" y="120" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1PS48ji4i_MLqDeLuIUx-1" value="Tool 1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1380" y="40" width="100" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="MkaFbBKNnFShpIhk2ngn-1" value="return request to use tool 1 with provided parameters" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1289.5" y="160" as="sourcePoint" />
+            <mxPoint x="970" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MkaFbBKNnFShpIhk2ngn-2" value="calls tool 1 with provided parameters" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" parent="1" edge="1" target="1PS48ji4i_MLqDeLuIUx-1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="970" y="200" as="sourcePoint" />
+            <mxPoint x="1420" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MkaFbBKNnFShpIhk2ngn-3" value="return result from tool 1" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1430" y="240" as="sourcePoint" />
+            <mxPoint x="969.5" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MkaFbBKNnFShpIhk2ngn-4" value="send tool 1 result" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="970" y="280" as="sourcePoint" />
+            <mxPoint x="1289.5" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MkaFbBKNnFShpIhk2ngn-5" value="return request to use tool 2 with provided parameters" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" parent="1" source="7bV-YWdE4SNP33KC-X1z-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1050" y="320" as="sourcePoint" />
+            <mxPoint x="970" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dTGKUFBSPYp7B7EKcb62-1" value="Tool 2" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="40" width="100" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="dTGKUFBSPYp7B7EKcb62-3" value="return result from tool 2" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" target="7bV-YWdE4SNP33KC-X1z-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1560.5" y="400" as="sourcePoint" />
+            <mxPoint x="1100" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dTGKUFBSPYp7B7EKcb62-5" value="calls tool 2 with provided parameters" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="dTGKUFBSPYp7B7EKcb62-1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="970" y="360" as="sourcePoint" />
+            <mxPoint x="1430" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dTGKUFBSPYp7B7EKcb62-6" value="send tool 2 result" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.0016" width="80" relative="1" as="geometry">
+            <mxPoint x="970" y="440" as="sourcePoint" />
+            <mxPoint x="1289.5" y="440" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dTGKUFBSPYp7B7EKcb62-8" value="return response" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1290" y="480" as="sourcePoint" />
+            <mxPoint x="970" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
