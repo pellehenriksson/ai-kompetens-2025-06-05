@@ -13,10 +13,9 @@ temat för detta tillfälle är AI Agenter,
 - vad finnd det för potentiella områden.
 
 vi börjar med ett enkelt exempel där vi anropar en llm och får ett svar tillbaka.
-successivt adderad vi fler delar tills vi har någon form av konceptuell agent
+successivt adderad vi fler delar tills vi har någon form av enkel agent
 
-formatet för detta är jupyter notebooks
-
+presentaionsformat för detta jupyter notebooks
 
 1. anropra ett api
 2. anropa ett api, strukturerad respons
@@ -25,5 +24,4 @@ formatet för detta är jupyter notebooks
 5. använda 'tools'
 6. mcp-protokollet
 7. agent
-7. multi-agenter 
-
+7. multi-agenter
