@@ -8,3 +8,5 @@ temat för detta tillfälle är AI Agenter,
 
 vi börjar med ett enkelt exempel där vi anropar en llm och får ett svar tillbaka.
 successivt adderad vi fler delar tills vi har någon form av konceptuell agent
+
+formater för detta är jupyter notebooks
