@@ -1,6 +1,6 @@
 # AI kompetensdelning 2025-06-05
 
-An AI agent is a software system, often referred to as "agentic AI," 
+> An AI agent is a software system, often referred to as "agentic AI," 
 that uses artificial intelligence to interact with its environment, 
 collect data, and **make decisions to achieve specific goals**
 
